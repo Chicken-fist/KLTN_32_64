@@ -12,30 +12,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "HocPhanKhoaLuanTotNghiep")
-public class HocPhanKhoaLuanTotNghiep {
+@Table(name = "Nhom")
+public class Nhom {
 	
 	@Id
-	private String maHocPhan;
+	private String maNhom;
 	
-	@Column(name = "tenHocPhan", columnDefinition = "nvarchar(255)" ,nullable = false)
-	private String tenHocPhan;
-	
-	@Column(name = "soTinChi", nullable = false)
-	private String soTinChi;
-	
-	@Column(name = "hocPhantienQuyet", nullable = false)
-	private boolean hocPhantienQuyet;
+	@Column(name = "tenNhom", columnDefinition = "nvarchar(255)", nullable = false)
+	private String tenNhom;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "maHocKy", nullable = false)
-	private HocKy hocKy;
-	
+	@JoinColumn(name = "maDeTai", nullable = false)
+	private DeTai deTai;
 	
 
 }

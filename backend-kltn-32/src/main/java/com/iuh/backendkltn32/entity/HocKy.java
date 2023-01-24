@@ -20,7 +20,6 @@ public class HocKy {
 	@Id
 	private String maHocKy;
 	
-	@Column(name = "namHoc")
 	private String namHoc;
 
 }

@@ -1,5 +1,6 @@
 package com.iuh.backendkltn32.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -13,24 +14,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "TieuChiChamDiem")
-public class TieuChiChamDiem {
+@Table(name = "PhieuCham")
+public class PhieuCham {
 	
 	@Id
-	private String maChuanDauRa;
+	private String maPhieu;
 	
-	@Column(name = "tenChuanDauRa", columnDefinition = "nvarchar(255)" ,nullable = false)
-	private String tenChuanDauRa;
+	@Column(name = "tenPhieu", columnDefinition = "nvarchar(255)" ,nullable = false)
+	private String tenPhieu;
 	
-	@Column(name = "diemToiDa", nullable = false)
-	private Double diemToiDa;
+	@Column(name = "diemPhieuCham", nullable = false)
+	private Double diemPhieuCham;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tieuChiChamDiem")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "phieuCham")
+	private List<KetQua> dsKetQua;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "phieuCham")
 	private List<DiemThanhPhan> dsDiemThanhPhan;
 
 }
