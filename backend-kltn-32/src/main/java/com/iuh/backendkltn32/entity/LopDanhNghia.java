@@ -36,6 +36,6 @@ public class LopDanhNghia {
 	@Column(name = "gioiHanSinhVien", nullable = false)
 	private Integer gioiHanSinhVien;
 	
-	@OneToMany(fetch = FetchType.LAZY)
-	private List<SinhVien> dsSinhVien;
+//	@OneToMany(fetch = FetchType.LAZY)
+//	private List<SinhVien> dsSinhVien;
 }

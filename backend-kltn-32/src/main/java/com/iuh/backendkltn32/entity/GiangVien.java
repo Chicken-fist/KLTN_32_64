@@ -2,12 +2,15 @@ package com.iuh.backendkltn32.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,7 +43,7 @@ public class GiangVien {
 	@Column(name = "hocVi", columnDefinition = "nvarchar(255)" ,nullable = false)
 	private String hocVi;
 	
-	@Column(name = "ngaySinh", nullable = false)
+	@Column(name = "ngaySinh")
 	private Date ngaySinh;
 	
 	@Column(name = "namCongTac", nullable = false)
@@ -53,7 +56,9 @@ public class GiangVien {
 	@Column(name = "gioiTinh", nullable = false)
 	private Integer gioiTinh;
 	
-	
+//	@OneToOne( mappedBy = "giangVien")
+//	@JsonIgnore
+//	private TaiKhoan taiKhoan;
 	
 
 }

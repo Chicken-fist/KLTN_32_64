@@ -19,10 +19,7 @@ public class QuanLyBoMon extends GiangVien {
 		// TODO Auto-generated constructor stub
 	}
 
-	public QuanLyBoMon(String maGiangVien, String tenGiangVien, String soDienThoai, String email, String cmnd,
-			String hocVi, Date ngaySinh, Integer namCongTac, Khoa khoa, Integer gioiTinh) {
-		super(maGiangVien, tenGiangVien, soDienThoai, email, cmnd, hocVi, ngaySinh, namCongTac, khoa, gioiTinh);
-	}
+	
 
 	public LopHocPhan moLopHocPhan(LopHocPhan lopHocPhan) {
 

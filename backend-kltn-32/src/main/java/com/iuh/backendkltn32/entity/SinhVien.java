@@ -3,6 +3,8 @@ package com.iuh.backendkltn32.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,7 +26,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "SinhVien")
+@Table(name = "sinhvien")
 public class SinhVien {
 	
 	@Id
@@ -42,7 +44,7 @@ public class SinhVien {
 	@Column(name = "email", nullable = false)
 	private String email;
 	
-	@Column(name = "ngaySinh",nullable = false)
+	@Column(name = "ngaySinh",nullable = true)
 	private Date ngaySinh;
 	
 	@Column(name = "namNhapHoc", nullable = false)
@@ -52,22 +54,34 @@ public class SinhVien {
 	private Integer gioiTinh;
 	
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "maLopDanhNghia", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "maLopDanhNghia", nullable = true)
+	@JsonIgnore
 	private LopDanhNghia lopDanhNghia;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "maLopHocPhan", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+	@JoinColumn(name = "maLopHocPhan", nullable = true)
 	private LopHocPhan lopHocPhan;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "sinhVien")
+	@JsonIgnore
 	private List<KetQua> dsKetQua;
 	
-	@ManyToOne
-	@JoinColumn(name = "maNhom", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "maNhom", nullable = true)
 	private Nhom nhom;
 	
-	@OneToOne( mappedBy = "sinhVien")
-	private TaiKhoan taiKhoan;
-
+//	@OneToOne( mappedBy = "sinhVien")
+//	@JsonIgnore
+//	private TaiKhoan taiKhoan;
+	
+	@Override
+	public String toString() {
+		return "SinhVien [maSinhVien=" + maSinhVien + ", tenSinhVien=" + tenSinhVien + ", noiSinh=" + noiSinh
+				+ ", dienThoai=" + dienThoai + ", email=" + email + ", namNhapHoc="
+				+ namNhapHoc + ", gioiTinh=" + gioiTinh + "]";
+	}
+	
+	
 }

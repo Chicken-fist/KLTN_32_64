@@ -46,7 +46,7 @@ public class LopHocPhan {
 	@JoinColumn(name = "maHocPhan", nullable = false)
 	private HocPhanKhoaLuanTotNghiep hocPhanKhoaLuanTotNghiep;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "lopHocPhan")
-	private List<SinhVien> dsSinhVien;
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "lopHocPhan")
+//	private List<SinhVien> dsSinhVien;
 
 }

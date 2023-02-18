@@ -1,7 +1,11 @@
 package com.iuh.backendkltn32.entity;
 
+import com.iuh.backendkltn32.common.EVaiTro;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,8 +27,9 @@ public class VaiTro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long maVaiTro;
 	
-	@Column(name = "tenVaiTro", columnDefinition = "nvarchar(255)" ,nullable = false)
-	private String tenVaiTro;
+	@Column(name = "tenVaiTro", columnDefinition = "varchar(255)" ,nullable = false)
+	@Enumerated(EnumType.STRING)
+	private EVaiTro tenVaiTro;
 	
 
 }
