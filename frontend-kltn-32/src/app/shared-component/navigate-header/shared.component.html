@@ -1,28 +1,38 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">DH CN TP HCM</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-fluid ">
+    <img src="./assets/image/logo_iuh.png" style="width: 50px">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
+
+      <div style="display: flex; align-items: center;" class="pe-4">
+        <mat-icon matBadge="8" matBadgeColor="accent" matBadgeSize="small"
+                  style="color: #4da1e8; margin-right: 20px; font-size: 25px">notifications_none
+        </mat-icon>
+        <mat-icon matBadge="8" matBadgeColor="accent" matBadgeSize="small"
+                  style="color: #4da1e8; margin-right: 20px; font-size: 25px">sms
+        </mat-icon>
+
+        <div class="nav-item dropdown avatarName" style="display: flex; align-items: center">
+          <ngx-avatar src="./assets/image/logo_iuh.png" size="45"></ngx-avatar>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Hoàng Minh Trí</a>
+          <ul class="dropdown-menu" style="left: -31px;">
+            <li><a class="dropdown-item" href="#">Hồ Sơ</a></li>
+            <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"
-          ><span class="glyphicon glyphicon-user"></span> Sign Up
-          <span class="caret"></span
-        ></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-      </li>
-    </ul>
   </div>
 </nav>
