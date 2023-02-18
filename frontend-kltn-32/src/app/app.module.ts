@@ -25,6 +25,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatChipsModule} from "@angular/material/chips";
+import {MatBadgeModule} from '@angular/material/badge';
+import {AvatarModule} from "ngx-avatar";
 
 @NgModule({
   declarations: [
@@ -35,28 +38,31 @@ import {MatSortModule} from '@angular/material/sort';
     DetaiComponent,
     ThemDeTaiGvComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTabsModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        AvatarModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTabsModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatRadioModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatBadgeModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatChipsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
